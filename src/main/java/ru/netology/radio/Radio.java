@@ -1,5 +1,7 @@
 package ru.netology.radio;
 
+import javax.swing.*;
+
 public class Radio {
     private int maxVolume = 10;
     private int minVolume = 0;
@@ -55,75 +57,67 @@ public class Radio {
     }
 
 
-    public void maxStation (int aboveMaxStstion){
-        if ((maxStation+aboveMaxStstion)>9) {
-            this.maxStation = 0;
+    public void maxStation (){
+        if ((currentStation+1)>maxStation) {
+            currentStation = minStation;
         }
+        else this.currentStation = currentStation+1;
     }
 
-    public void prewMinStation (int bellowMinStation){
-        if ((minStation-bellowMinStation)<0) {
-            this.minStation = 9;
+    public void bellowMinStation (){
+        if ((currentStation-1) < minStation) {
+            currentStation = maxStation;
         }
+        else this.currentStation = currentStation - 1;
     }
 
-    public void aboveMaxVolume (int currentVolume) {
-        if ((currentVolume + 1) >= 10) {
-            this.currentVolume = 10;
+    public void aboveMaxVolume () {
+        if ((currentVolume + 1) >= maxVolume) {
+            this.currentVolume = maxVolume;
         }
         else this.currentVolume = (currentVolume + 1);
     }
 
-    public void bellowMinVolume (int currentVolume) {
-        if ((currentVolume - 1) <= 0) {
-            this.currentVolume = 0;
+    public void bellowMinVolume () {
+        if ((currentVolume - 1) <= minVolume) {
+            this.currentVolume = minVolume;
         }
         else this.currentVolume = (currentVolume - 1);
     }
 
-    public void increaseVolume(int currentVolume) {
-        if (currentVolume < 10) {
+    public void increaseVolume() {
+        if (currentVolume < maxVolume) {
             this.currentVolume = currentVolume + 1;
         }
-        if ((currentVolume + 1) >= 10) {
-            this.currentVolume = 10;
+        if ((currentVolume + 1) >= maxVolume) {
+            this.currentVolume = maxVolume;
         }
     }
 
-    public void nextStation(int currentStation) {
-        if (currentStation < 9) {
-            this.currentStation = currentStation + 1;
+    public void nextStation() {
+        if ((currentStation + 1) > maxStation) {
+            currentStation = minStation;
         }
-        if ((currentStation + 1) > 9) {
-            this.currentStation = 0;
+       else this.currentStation = currentStation +1;
         }
-        if (currentStation < 0) {
-            this.currentStation = 9;
-        }
-    }
 
-    public void reduceVolume(int currentVolume) {
-        if ((currentVolume - 1) <= 0) {
-                this.currentVolume = 0;
+
+    public void reduceVolume() {
+        if ((currentVolume - 1) <= minVolume) {
+                this.currentVolume = minVolume;
             }
-        if (currentVolume < 10 && currentVolume > 0) {
+        if (currentVolume > minVolume) {
             this.currentVolume = currentVolume - 1;
         }
     }
 
-    public void prewStation(int currentStation) {
-        if (currentStation <= 9) {
-            this.currentStation = currentStation - 1;
+    public void prewStation() {
+        if ((currentStation -1) < minStation){
+            currentStation = maxStation;
         }
-        if (this.currentStation < 0) {
-            this.currentStation = 9;
-        }
-        if (currentStation > 9) {
-            this.currentStation = 0;
-        }
-    }
+        else this.currentStation = currentStation - 1;
 
-}
+}}
 
 
 

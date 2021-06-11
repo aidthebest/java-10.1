@@ -37,7 +37,6 @@ public class Radio {
         this.currentStation = currentStation;
     }
 
-
     public int getCurrentStation() {
         return currentStation;
     }
@@ -56,33 +55,28 @@ public class Radio {
         return currentVolume;
     }
 
-
-    public void maxStation (){
-        if ((currentStation+1)>maxStation) {
+    public void maxStation() {
+        if ((currentStation + 1) > maxStation) {
             currentStation = minStation;
-        }
-        else this.currentStation = currentStation+1;
+        } else this.currentStation = currentStation + 1;
     }
 
-    public void bellowMinStation (){
-        if ((currentStation-1) < minStation) {
+    public void bellowMinStation() {
+        if ((currentStation - 1) < minStation) {
             currentStation = maxStation;
-        }
-        else this.currentStation = currentStation - 1;
+        } else this.currentStation = currentStation - 1;
     }
 
-    public void aboveMaxVolume () {
+    public void aboveMaxVolume() {
         if ((currentVolume + 1) >= maxVolume) {
             this.currentVolume = maxVolume;
-        }
-        else this.currentVolume = (currentVolume + 1);
+        } else this.currentVolume = (currentVolume + 1);
     }
 
-    public void bellowMinVolume () {
+    public void bellowMinVolume() {
         if ((currentVolume - 1) <= minVolume) {
             this.currentVolume = minVolume;
-        }
-        else this.currentVolume = (currentVolume - 1);
+        } else this.currentVolume = (currentVolume - 1);
     }
 
     public void increaseVolume() {
@@ -97,27 +91,25 @@ public class Radio {
     public void nextStation() {
         if ((currentStation + 1) > maxStation) {
             currentStation = minStation;
-        }
-       else this.currentStation = currentStation +1;
-        }
-
+        } else this.currentStation = currentStation + 1;
+    }
 
     public void reduceVolume() {
         if ((currentVolume - 1) <= minVolume) {
-                this.currentVolume = minVolume;
-            }
+            this.currentVolume = minVolume;
+        }
         if (currentVolume > minVolume) {
             this.currentVolume = currentVolume - 1;
         }
     }
 
     public void prewStation() {
-        if ((currentStation -1) < minStation){
+        if ((currentStation - 1) < minStation) {
             currentStation = maxStation;
-        }
-        else this.currentStation = currentStation - 1;
+        } else this.currentStation = currentStation - 1;
 
-}}
+    }
+}
 
 
 

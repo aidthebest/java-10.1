@@ -58,13 +58,17 @@ public class Radio {
     public void maxStation() {
         if ((currentStation + 1) > maxStation) {
             currentStation = minStation;
-        } else this.currentStation = currentStation + 1;
+        } else {
+            this.currentStation = currentStation + 1;
+        }
     }
 
     public void bellowMinStation() {
         if ((currentStation - 1) < minStation) {
             currentStation = maxStation;
-        } else this.currentStation = currentStation - 1;
+        } else {
+            this.currentStation = currentStation - 1;
+        }
     }
 
     public void aboveMaxVolume() {
@@ -76,7 +80,9 @@ public class Radio {
     public void bellowMinVolume() {
         if ((currentVolume - 1) <= minVolume) {
             this.currentVolume = minVolume;
-        } else this.currentVolume = (currentVolume - 1);
+        } else {
+            this.currentVolume = (currentVolume - 1);
+        }
     }
 
     public void increaseVolume() {
@@ -91,7 +97,9 @@ public class Radio {
     public void nextStation() {
         if ((currentStation + 1) > maxStation) {
             currentStation = minStation;
-        } else this.currentStation = currentStation + 1;
+        } else {
+            this.currentStation = currentStation + 1;
+        }
     }
 
     public void reduceVolume() {
@@ -106,7 +114,9 @@ public class Radio {
     public void prewStation() {
         if ((currentStation - 1) < minStation) {
             currentStation = maxStation;
-        } else this.currentStation = currentStation - 1;
+        } else {
+            this.currentStation = currentStation - 1;
+        }
 
     }
 }

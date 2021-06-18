@@ -238,15 +238,15 @@ class RadioTest {
         assertEquals(expected, actual);
     }
 
-    @Test
-    public void setStationandVolume () {
-        Radio rad = new Radio(
-                25,
-                95
-        );
-        assertEquals(25, rad.getMaxStation());
-        assertEquals(95, rad.getMaxVolume());
-    }
+//    @Test
+//    public void setStationandVolume () {
+//        Radio rad = new Radio(
+//                25,
+//                95
+//        );
+//        assertEquals(25, rad.getMaxStation());
+//        assertEquals(95, rad.getMaxVolume());
+//    }
 
 
 }
